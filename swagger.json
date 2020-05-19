@@ -1,0 +1,116 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Node test Application API",
+      "description": "Node test Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/v1",
+    "tags": [
+      {
+        "name": "Products",
+        "description": "API for Products"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/products": {
+        "get": {
+          "tags": [
+            "Products"
+          ],
+          "summary": "Get all Products",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Products"
+              }
+            }
+          }
+        }
+      },
+      "/products/{productId}": {
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "description": "ID of user that we want to find",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Product"
+          ],
+          "summary": "Get Products with given ID",
+          "responses": {
+            "200": {
+              "schema": {
+                "$ref": "#/definitions/Product"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Product": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "number",
+            "uniqueItems": true
+          },
+          "manufacturer": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "Products": {
+        "properties": [{
+            "id": {
+              "type": "number",
+              "uniqueItems": true
+            },
+            "manufacturer": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            },
+            "price": {
+              "type": "number"
+            },
+            "description": {
+              "type": "string"
+            }
+          }]
+      }
+    }
+  }

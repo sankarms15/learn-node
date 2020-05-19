@@ -1,0 +1,48 @@
+{
+  "name": "node-test",
+  "version": "1.0.0",
+  "description": "AMP-Coding-Challenge",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha --recursive ./tests",
+    "coverage": "nyc npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ampdigital/node-test.git"
+  },
+  "author": "Sankar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ampdigital/node-test/issues"
+  },
+  "homepage": "https://github.com/ampdigital/node-test#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.4",
+    "nyc": "^15.0.1",
+    "sinon": "^9.0.2",
+    "supertest": "^4.0.2"
+  },
+  "nyc": {
+    "branches": 90,
+    "lines": 90,
+    "functions": 90,
+    "statements": 90,
+    "exclude": [
+      "**/tests/**",
+      "server.js"
+    ]
+  }
+}
