@@ -18,7 +18,7 @@ To Start Server:
  $ npm start
 
 To test locally:
-$ http://localhost:3000/product-api
+http://localhost:3000/product-api
  
 # API Docs
 
