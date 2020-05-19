@@ -7,21 +7,18 @@ Clone down this repository. You will need node and npm installed globally on you
 
 Installation:
 
-npm install
+ npm install
 
 To Run Test Suite:
 
-npm test
+ npm test
 
 To Start Server:
 
-npm start
+ npm start
 
 To test locally:
 http://localhost:3000/product-api
-
-# Testing
-Run npm test to excute the test
  
 # API Docs
 
