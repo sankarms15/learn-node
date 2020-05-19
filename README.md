@@ -1,4 +1,4 @@
-## NODE-TEST
+## NODE-Technical-TEST
 
 An application used to prove my node knowldege. I have included 90% code coverage, added swagger. 
 
