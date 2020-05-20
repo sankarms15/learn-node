@@ -3,9 +3,6 @@ const sinon = require('sinon');
 
 const productService = require('../../../services/product');
 const productController = require('../../../contollers/product');
-// const productList = require('../../../lib/products');
-
-
 
 const mockproducts = [{
   id: 123,
@@ -13,18 +10,22 @@ const mockproducts = [{
   model: 'iPhone XS',
   price: 1799,
   description: 'Latest and most power iPhone with 5.8inch screen'
+}, {
+  id: 124,
+  manufacturer: 'Apple',
+  model: 'iPhone 11',
+  price: 1798,
+  description: 'Latest and most power iPhone with 5.8inch screen'
 }];
 
 describe('Product Controller', function() {
-  // let productListStub;
+  let productListStub;
   let productServiceStub;
   beforeEach(() => {
-    // productListStub = sinon.stub(productList, 'list');
     productServiceStub = sinon.stub(productService, "getProductList");
   })
 
   afterEach(() => {
-    // productListStub.restore();
     productServiceStub.restore();
   });
   
@@ -49,9 +50,8 @@ describe('Product Controller', function() {
         .expects("jsonp")
         .once()
         .withExactArgs({ products: stubValue });
-      // productListStub.resolves(mockproducts);
       const stub = productServiceStub.returns(stubValue);
-      await productController.getProducts(req, res);;
+      await productController.getProducts(req, res);
       expect(stub.calledOnce).to.be.true;
       mock.verify();
     });
@@ -72,7 +72,6 @@ describe('Product Controller', function() {
         .expects("jsonp")
         .once()
         .withExactArgs({ products: stubValue });
-      // productListStub.resolves(mockproducts);
       const stub = productServiceStub.returns(stubValue);
       await productController.getProducts(req, res);;
       expect(stub.calledOnce).to.be.true;
