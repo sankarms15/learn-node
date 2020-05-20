@@ -3,7 +3,7 @@ const sinon = require('sinon');
 
 const productService = require('../../../services/product');
 const productController = require('../../../contollers/product');
-const productList = require('../../../lib/products');
+// const productList = require('../../../lib/products');
 
 
 
@@ -16,15 +16,15 @@ const mockproducts = [{
 }];
 
 describe('Product Controller', function() {
-  let productListStub;
+  // let productListStub;
   let productServiceStub;
   beforeEach(() => {
-    productListStub = sinon.stub(productList, 'list');
+    // productListStub = sinon.stub(productList, 'list');
     productServiceStub = sinon.stub(productService, "getProductList");
   })
 
   afterEach(() => {
-    productListStub.restore();
+    // productListStub.restore();
     productServiceStub.restore();
   });
   
@@ -49,7 +49,7 @@ describe('Product Controller', function() {
         .expects("jsonp")
         .once()
         .withExactArgs({ products: stubValue });
-      productListStub.resolves(mockproducts);
+      // productListStub.resolves(mockproducts);
       const stub = productServiceStub.returns(stubValue);
       await productController.getProducts(req, res);;
       expect(stub.calledOnce).to.be.true;
@@ -72,7 +72,7 @@ describe('Product Controller', function() {
         .expects("jsonp")
         .once()
         .withExactArgs({ products: stubValue });
-      productListStub.resolves(mockproducts);
+      // productListStub.resolves(mockproducts);
       const stub = productServiceStub.returns(stubValue);
       await productController.getProducts(req, res);;
       expect(stub.calledOnce).to.be.true;
