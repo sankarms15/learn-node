@@ -1,7 +1,7 @@
 {
-  "name": "node-test",
+  "name": "learn-node",
   "version": "1.0.0",
-  "description": "AMP-Coding-Challenge",
+  "description": "learn-node",
   "main": "server.js",
   "directories": {
     "lib": "lib"
