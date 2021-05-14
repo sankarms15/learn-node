@@ -1,4 +1,4 @@
-## AMP - Interview - Product API
+## Product API
 
 ## Tech Stack
 
